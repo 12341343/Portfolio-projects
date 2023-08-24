@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library</title>
+  </head>
+  <body>
+    <h1>My Library</h1>
+
+      {% for i in all_books %}
+      <ul>
+        <li><a href="{{ url_for('delete', id=i.id)  }}">Delete</a> - {{i['title'] }} - {{ i['author'] }} - {{ i['review'] }}/10 -- <button onclick="window.location.href='{{ url_for('edit', id=i.id ) }}';">
+      Edit
+    </button></li>
+      </ul>
+      {% endfor %}
+
+<!--    <p>{{ all_books }}</p>-->
+
+    <button onclick="window.location.href='{{ url_for('add') }}';">
+      Add New Book
+    </button>
+  </body>
+</html>
