@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Movies{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="heading">Movie Title</h1>
+    <p class="description">Edit Movie Rating</p>
+  <form action="{{ url_for('editing') }}" method="POST">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Your rating out of 10 e.g 7.5</label>
+    <input name="rating" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+    <input hidden="hidden" name="id" value="{{movies.id}}">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Your review</label>
+    <input name="review" type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+    <input type="submit" class="btn btn-info mt-2" value="Submit Button">
+  </div>
+</form>
+  </div>
+{% endblock %}
